@@ -1,0 +1,179 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class CharacterCreation extends Application {
+  
+  public static void main(String[] args) {
+    launch(args);
+  }
+
+  @Override
+  public void start(Stage primaryStage) {
+    // Create a VBox to hold all elements in the scene
+    VBox root = new VBox();
+    root.setSpacing(10);
+    
+    // Create an HBox to hold the ChoiceBox for selecting body parts
+    HBox bodyPartChoiceBoxContainer = new HBox();
+    bodyPartChoiceBoxContainer.setSpacing(10);
+    
+    // Create a ChoiceBox for selecting the face
+    ChoiceBox<String> faceChoiceBox = new ChoiceBox<>();
+    faceChoiceBox.getItems().addAll("Face 1", "Face 2", "Face 3");
+    faceChoiceBox.setValue("Face 1");
+    bodyPartChoiceBoxContainer.getChildren().add(faceChoiceBox);
+    
+    // Create a ChoiceBox for selecting the hair
+    ChoiceBox<String> hairChoiceBox = new ChoiceBox<>();
+    hairChoiceBox.getItems().addAll("Hair 1", "Hair 2", "Hair 3");
+    hairChoiceBox.setValue("Hair 1");
+    bodyPartChoiceBoxContainer.getChildren().add(hairChoiceBox);
+    
+    // Create a ChoiceBox for selecting the arms
+    ChoiceBox<String> armsChoiceBox = new ChoiceBox<>();
+    armsChoiceBox.getItems().addAll("Arms 1", "Arms 2", "Arms 3");
+    armsChoiceBox.setValue("Arms 1");
+    bodyPartChoiceBoxContainer.getChildren().add(armsChoiceBox);
+    
+    // Create a ChoiceBox for selecting the legs
+    ChoiceBox<String> legsChoiceBox = new ChoiceBox<>();
+    legsChoiceBox.getItems().addAll("Legs 1", "Legs 2", "Legs 3");
+    legsChoiceBox.setValue("Legs 1");
+    bodyPartChoiceBoxContainer.getChildren().add(legsChoiceBox);
+    
+    // Create a ChoiceBox for selecting the body
+    ChoiceBox<String> bodyChoiceBox = new ChoiceBox<>();
+    bodyChoiceBox.getItems().addAll("Body 1", "Body 2", "Body 3");
+    bodyChoiceBox.setValue("Body 1");
+    bodyPartChoiceBoxContainer.getChildren().add(bodyChoiceBox);
+    
+    root.getChildren().add(bodyPartChoiceBoxContainer);
+    
+    // Create an HBox to hold the images for the character
+    HBox characterImageContainer = new HBox();
+    characterImageContainer.setSpacing(10);
+    
+    // Create an ImageView for the face
+    ImageView faceImageView = new ImageView();
+        characterImageContainer.getChildren().add(faceImageView);
+    
+    // Create an ImageView for the hair
+    ImageView hairImageView = new ImageView();
+    characterImageContainer.getChildren().add(hairImageView);
+    
+    // Create an ImageView for the arms
+    ImageView armsImageView = new ImageView();
+    characterImageContainer.getChildren().add(armsImageView);
+    
+    // Create an ImageView for the legs
+    ImageView legsImageView = new ImageView();
+    characterImageContainer.getChildren().add(legsImageView);
+    
+    // Create an ImageView for the body
+    ImageView bodyImageView = new ImageView();
+    characterImageContainer.getChildren().add(bodyImageView);
+    
+    root.getChildren().add(characterImageContainer);
+    
+    // Create a button to apply changes to the character
+    Button applyChangesButton = new Button("Apply Changes");
+    applyChangesButton.setOnAction(event -> {
+      // Set the image for the face based on the selected value in the faceChoiceBox
+      String selectedFace = faceChoiceBox.getValue();
+      if (selectedFace.equals("Face 1")) {
+        faceImageView.setImage(new Image("face1.png"));
+      } else if (selectedFace.equals("Face 2")) {
+        faceImageView.setImage(new Image("face2.png"));
+      } else if (selectedFace.equals("Face 3")) {
+        faceImageView.setImage(new Image("face3.png"));
+      }
+      
+      // Set the image for the hair based on the selected value in the hairChoiceBox
+      String selectedHair = hairChoiceBox.getValue();
+      if (selectedHair.equals("Hair 1")) {
+        hairImageView.setImage(new Image("hair1.png"));
+      } else if (selectedHair.equals("Hair 2")) {
+        hairImageView.setImage(new Image("hair2.png"));
+      } else if (selectedHair.equals("Hair 3")) {
+        hairImageView.setImage(new Image("hair3.png"));
+      }
+      
+      // Set the image for the arms based on the selected value in the armsChoiceBox
+      String selectedArms = armsChoiceBox.getValue();
+      if (selectedArms.equals("Arms 1")) {
+        armsImageView.setImage(new Image("arms1.png"));
+      } else if (selectedArms.equals("Arms 2")) {
+        armsImageView.setImage(new Image("arms2.png"));
+      } else if (selectedArms.equals("Arms 3")) {
+        armsImageView.setImage(new Image("arms3.png"));
+      }
+      
+      // Set the image for the legs based on the selected value in the legsChoiceBox
+      String selectedLegs = legsChoiceBox.getValue();
+      if (selectedLegs.equals("Legs 1")) {
+        legsImageView.setImage(new Image("legs1.png"));
+      } else if (selectedLegs.equals("Legs 2")) {
+            legsImageView.setImage(new Image("legs2.png"));
+      } else if (selectedLegs.equals("Legs 3")) {
+        legsImageView.setImage(new Image("legs3.png"));
+      }
+      
+      // Set the image for the body based on the selected value in the bodyChoiceBox
+      String selectedBody = bodyChoiceBox.getValue();
+      if (selectedBody.equals("Body 1")) {
+        bodyImageView.setImage(new Image("body1.png"));
+      } else if (selectedBody.equals("Body 2")) {
+        bodyImageView.setImage(new Image("body2.png"));
+      } else if (selectedBody.equals("Body 3")) {
+        bodyImageView.setImage(new Image("body3.png"));
+      }
+    });
+    root.getChildren().add(applyChangesButton);
+    
+    // Show the scene in the stage
+    stage.show();
+  }
+  
+  // Main method to launch the JavaFX application
+  public static void main(String[] args) {
+    launch(args);
+  }
+}
+
+    legsImageView.setImage(new Image("legs2.png"));
+      } else if (selectedLegs.equals("Legs 3")) {
+        legsImageView.setImage(new Image("legs3.png"));
+      }
+      
+      // Set the image for the body based on the selected value in the bodyChoiceBox
+      String selectedBody = bodyChoiceBox.getValue();
+      if (selectedBody.equals("Body 1")) {
+        bodyImageView.setImage(new Image("body1.png"));
+      } else if (selectedBody.equals("Body 2")) {
+        bodyImageView.setImage(new Image("body2.png"));
+      } else if (selectedBody.equals("Body 3")) {
+        bodyImageView.setImage(new Image("body3.png"));
+      }
+    });
+    root.getChildren().add(applyChangesButton);
+    
+    // Show the scene in the stage
+    stage.show();
+  }
+  
+  // Main method to launch the JavaFX application
+  public static void main(String[] args) {
+    launch(args);
+  }
+}
+
+
+The comments in this code explain the purpose of each step in the character creation process. The code creates an ImageView for each body part (face, hair, arms, legs, body) and sets the image based on the selected value in the corresponding ChoiceBox. 
+The changes are applied when the "Apply Changes" button is clicked. The scene is then shown in the stage.
