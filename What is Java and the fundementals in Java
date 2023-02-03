@@ -1,0 +1,241 @@
+# What is Java and how did it start
+
+Java is a high-level programming language developed by Sun Microsystems (now owned by Oracle) in the mid-1990s. It was designed to be portable, secure, and scalable, and it has become one of the most widely used programming languages for developing a wide variety of applications, including web, mobile, desktop, and games.
+
+Basic skills in Java programming include:
+
+# Variables and data types: 
+
+In Java, you can declare variables to store values, and you must specify the type of each variable. 
+
+Below is an example of Variables and Data types
+------------------------------------------------------------------------------------------------------------------
+
+int age = 30; // declare an integer variable called "age" and initialize it with the value 30
+double height = 5.9; // declare a double variable called "height" and initialize it with the value 5.9
+char firstLetter = 'J'; // declare a character variable called "firstLetter" and initialize it with the value 'J'
+boolean isValid = true; // declare a boolean variable called "isValid" and initialize it with the value true
+String name = "John Doe"; // declare a string variable called "name" and initialize it with the value "John Doe"
+
+-------------------------------------------------------------------------------------------------------------------
+
+Java has several primitive data types, such as int, double, char, and boolean, as well as reference data types, such as String, arrays, and objects.
+
+# Operators: 
+
+Java has a variety of operators that you can use to perform arithmetic, relational, logical, and conditional operations. 
+For example, the addition operator (+) can be used to add two values, while the less than operator (<) can be used to compare two values and determine if one is less than the other.
+
+Below is an example of Operators
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+int x = 10; // declare an integer variable "x" and set its value to 10
+int y = 20; // declare an integer variable "y" and set its value to 20
+
+System.out.println(x + y); // add x and y and print the result (30)
+System.out.println(x - y); // subtract y from x and print the result (-10)
+System.out.println(x * y); // multiply x and y and print the result (200)
+System.out.println(x / y); // divide x by y and print the result (0)
+System.out.println(x % y); // get the remainder of dividing x by y and print the result (10)
+
+// Output:
+// 30
+// -10
+// 200
+// 0
+// 10
+
+Let's go through each line and understand what each operator does:
+
+x + y is an addition operator that adds the values of x and y.
+
+x - y is a subtraction operator that subtracts the value of y from x.
+
+x * y is a multiplication operator that multiplies the values of x and y.
+
+x / y is a division operator that divides the value of x by the value of y.
+
+x % y is a modulo operator that returns the remainder of dividing x by y. This is often used to determine if a number is even or odd.
+
+You can also use the increment (++) and decrement (--) operators to increase or decrease the value of a variable by 1:
+
+int x = 10; // declare an integer variable "x" and set its value to 10
+
+x++; // increment the value of "x" by 1 (x becomes 11)
+System.out.println(x); // print the value of "x" (11)
+
+x--; // decrement the value of "x" by 1 (x becomes 10)
+System.out.println(x); // print the value of "x" (10)
+
+// Output:
+// 11
+// 10
+
+You can also use the assignment operators to assign values to variables. Some common assignment operators include =, +=, -=, *=, and /=:
+
+int x = 10; // declare an integer variable "x" and set its value to 10
+int y = 20; // declare an integer variable "y" and set its value to 20
+
+x += y; // add y to x and store the result in x (x becomes 30)
+System.out.println(x); // print the value of "x" (30)
+
+x -= y; // subtract y from x and store the result in x (x becomes 10)
+System.out.println(x); // print the value of "x" (10)
+
+x *= y; // multiply x by y and store the result in x (x becomes 200)
+System.out.println(x); // print the value of "x" (200)
+
+x /= y; // divide x by y and store the result in x (x becomes 10)
+System.out.println(x); // print the value of "x" (10)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Control flow statements: 
+
+Control flow statements are used to control the flow of your program, based on certain conditions. 
+For example, you can use an if-else statement to execute different blocks of code based on whether a certain condition is true or false. 
+Loops, such as for, while, and do-while, allow you to repeat a block of code multiple times. 
+The switch statement is used to execute different blocks of code based on the value of a single expression.
+
+Below is an example of Control flow statements
+--------------------------------------------------------------------------------------------------
+
+int score = 70; // declare an integer variable called "score" and initialize it with the value 70
+
+// check if "score" is greater than or equal to 60
+if (score >= 60) {
+  System.out.println("Pass"); // if "score" is greater than or equal to 60, print "Pass"
+} else {
+  System.out.println("Fail"); // if "score" is less than 60, print "Fail"
+}
+
+// Output: Pass
+
+// repeat the following 5 times
+for (int i = 0; i < 5; i++) {
+  System.out.println(i); // print the value of "i"
+}
+
+// Output: 
+// 0
+// 1
+// 2
+// 3
+// 4
+
+---------------------------------------------------------------------------------------------------
+
+# Methods: 
+
+In Java, methods are reusable blocks of code that can be called from other parts of your program. 
+Methods can accept parameters and return values, making them a powerful tool for modularizing your code. 
+For example, you could create a method that calculates the average of a list of numbers, and then call that method from several different parts of your program.
+
+Below is an example of Methods
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// define a method called "max" that takes two integers and returns the maximum of the two
+public static int max(int a, int b) {
+  // check which of the two integers is greater
+  if (a > b) {
+    return a; // return the greater integer
+  } else {
+    return b; // return the other integer
+  }
+}
+
+int x = 10; // declare an integer variable called "x" and initialize it with the value 10
+int y = 20; // declare an integer variable called "y" and initialize it with the value 20
+int maxValue = max(x, y); // call the "max" method and pass "x" and "y" as arguments, then store the result in an integer variable called "maxValue", which is 20
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Arrays: 
+
+An array is a collection of values of the same type, stored in contiguous memory locations. 
+You can declare an array and initialize it with values, and then access and manipulate its elements using indexing. 
+Java also supports multi-dimensional arrays, which are arrays of arrays.
+
+Below is an example of Arrays
+-----------------------------------------------------------------------------------------------
+
+int[] numbers = new int[5]; // declare an integer array called "numbers" with 5 elements
+numbers[0] = 10; // set the first element of "numbers" to 10
+numbers[1] = 20; // set the second element of "numbers" to 20
+numbers[2] = 30; // set the third element of "numbers" to 30
+numbers[3] = 40; // set the fourth element of "numbers" to 40
+numbers[4] = 50; // set the fifth element of "numbers" to 50
+
+for (int i = 0; i < numbers.length; i++) { // loop through the elements of the array "numbers"
+  System.out.println(numbers[i]); // print the value of each element
+}
+
+// Output:
+// 10
+// 20
+// 30
+// 40
+// 50
+
+-----------------------------------------------------------------------------------------------
+
+# Classes and objects: 
+
+Object-oriented programming (OOP) is a programming paradigm that allows you to model real-world objects and their behavior in your code. 
+In Java, you define classes, which are blueprint for creating objects. 
+An object is an instance of a class, and it has its own state (instance variables) and behavior (methods). 
+Inheritance allows you to create a new class that inherits all the properties and behavior of an existing class, while polymorphism allows you to create methods with the same name but different behavior based on the type of object they are called on.
+
+
+Below is an example of Classes and Objects.
+-----------------------------------------------------------------------------------------------------------------
+
+// define a class called "Person"
+class Person {
+  String name; // declare a string variable called "name"
+  int age; // declare an integer variable called "age"
+
+  // define a method called "greet" that prints a greeting message
+  void greet() {
+    System.out.println("Hello, my name is " + name + " and I am " + age + " years old.");
+  }
+}
+
+Person john = new Person(); // create an instance of the "Person" class and store it in a variable called "john"
+john.name = "John Doe"; // set the value of the "name" property of the "john" object to "John Doe"
+john.age = 30; // set the value of the "age" property of the "john" object to 30
+john.greet(); // call the "greet" method of the "john" object
+
+// Output:
+// Hello, my name is John Doe and I am 30 years old.
+
+-----------------------------------------------------------------------------------------------------------------
+
+# Exception handling: 
+
+Exceptions are events that occur during the execution of your program that disrupt its normal flow. 
+For example, trying to divide by zero, accessing an index that is out of bounds, or trying to open a file that does not exist are all examples of exceptions. 
+Java provides a mechanism for handling exceptions called exception handling. 
+You can use try-catch blocks to catch exceptions, and you can also define your own custom exceptions. 
+Exception handling allows you to handle exceptions gracefully, rather than letting your program crash.
+
+Below is an example of Exception handling.
+-------------------------------------------------
+
+Exception handling:
+
+int[] numbers = {10, 20, 30}; // declare an integer array called "numbers" with 3 elements
+
+try {
+  int x = numbers[3]; // try to access the fourth element of "numbers"
+  System.out.println(x); // if no exception is thrown, print the value of the fourth element
+} catch (ArrayIndexOutOfBoundsException e) { // if an exception of type "ArrayIndexOutOfBoundsException" is thrown, catch it and store it in a variable called "e"
+  System.out.println("Index out of bounds!"); // print an error message
+}
+
+// Output:
+// Index out of bounds!
+
+-------------------------------------------------
+
+These are the basics of Java programming, and mastering them will give you a strong foundation for building more complex and sophisticated applications
