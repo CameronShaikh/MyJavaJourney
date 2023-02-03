@@ -236,8 +236,6 @@ Exception handling allows you to handle exceptions gracefully, rather than letti
 Below is an example of Exception handling written in Java
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
 Exception handling:
 
 int[] numbers = {10, 20, 30}; // declare an integer array called "numbers" with 3 elements
@@ -263,6 +261,7 @@ Doc comments start with /** and end with */ and are used to provide documentatio
 
 Below is an example of Documentation comments written in Java:
 -------------------------------------------------------------------------
+
 /**
  * A simple class that represents a point in 2D space.
  * 
@@ -294,6 +293,35 @@ This makes it easier for others to understand and use your code, especially if i
 
 The most common way to process doc comments is to use the javadoc tool that comes with the Java SDK. 
 This tool generates HTML documentation for your code, which you can then distribute or publish online.
+
+
+
+# Indentation in java
+
+Indentation in Java refers to the arrangement of the code in a structured manner, using spaces or tabs, to make the code easier to read and understand. 
+Indentation helps in grouping related code statements, indicating the scope of a block of code and separating control statements from the rest of the code.
+
+Here's an example to illustrate indentation in Java:
+----------------------------------------------------------------------
+
+public class Example {
+    public static void main(String[] args) {
+        int num1 = 10;    // Declare and initialize the first number
+        int num2 = 20;    // Declare and initialize the second number
+        
+        // Check if num1 is less than num2
+        // The code inside the if statement is indented to show that it is part of the same block
+        if (num1 < num2) {
+            System.out.println("num1 is less than num2");
+        } else {
+            System.out.println("num2 is less than or equal to num1");
+        }
+    }
+}
+
+----------------------------------------------------------------------
+In the example, the if statement and the code inside it are indented to indicate that they are part of the same block. 
+The same goes for the else statement. This makes the code easier to read and understand, and also helps to prevent errors.
 
 
 
