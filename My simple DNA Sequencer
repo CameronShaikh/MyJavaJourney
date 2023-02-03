@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class DNASequencer {
+    public static void main(String[] args) {
+        // Create a Scanner to read input from the user
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a DNA sequence: ");
+        // Read the DNA sequence from the user
+        String dna = input.nextLine();
+        // Output the length of the DNA sequence
+        System.out.println("Sequence Length: " + dna.length());
+        // Output the number of A's in the DNA sequence
+        System.out.println("Number of A's: " + countNucleotides(dna, 'A'));
+        // Output the number of C's in the DNA sequence
+        System.out.println("Number of C's: " + countNucleotides(dna, 'C'));
+        // Output the number of G's in the DNA sequence
+        System.out.println("Number of G's: " + countNucleotides(dna, 'G'));
+        // Output the number of T's in the DNA sequence
+        System.out.println("Number of T's: " + countNucleotides(dna, 'T'));
+    }
+
+    // This method returns the number of times a specific nucleotide appears in the DNA sequence
+    public static int countNucleotides(String dna, char nucleotide) {
+        int count = 0;
+        // Iterate through each character in the DNA sequence
+        for (int i = 0; i < dna.length(); i++) {
+            // If the current character is the specified nucleotide, increment the count
+            if (dna.charAt(i) == nucleotide) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
