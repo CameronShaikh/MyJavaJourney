@@ -38,3 +38,7 @@ public class ScientificCalculator {
         System.out.println("Result: " + result); // Print the result
     }
 }
+
+//This code allows the user to enter two numbers and an operator, then performs the calculation and prints the result. 
+//The supported operators are addition (+), subtraction (-), multiplication (*), division (/), and exponentiation (^).
+
