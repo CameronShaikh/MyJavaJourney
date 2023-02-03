@@ -32,3 +32,5 @@ public class DNASequencer {
         return count;
     }
 }
+
+// This program takes a DNA sequence as input and outputs the length of the sequence and the number of occurrences of each nucleotide (A, C, G, T).
