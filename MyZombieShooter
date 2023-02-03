@@ -1,0 +1,125 @@
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.util.Random;
+
+// Main class to launch the JavaFX application
+public class ZombieApp extends Application {
+  // Field to store the player's hitpoints
+  private int hitpoints = 100;
+  // Label to display the player's hitpoints
+  private Label labelHitpoints = new Label("Hitpoints: 100");
+  // ComboBox to select the weapon
+  private ComboBox<String> comboBoxWeapons = new ComboBox<>();
+  // Button to start the fight
+  private Button buttonFight = new Button("Fight");
+
+  // Method to start the GUI
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    // Set up the weapon combobox options
+    comboBoxWeapons.getItems().addAll("Pistol", "Shotgun", "Assault Rifle", "Toxic Gas", "Minigun");
+
+    // Create the layout
+    VBox layout = new VBox(10);
+    layout.setPadding(new Insets(20, 20, 20, 20));
+    layout.setAlignment(Pos.CENTER);
+    layout.getChildren().addAll(labelHitpoints, comboBoxWeapons, buttonFight);
+
+    // Create the scene and set it to the stage
+    Scene scene = new Scene(layout, 300, 300);
+    primaryStage.setScene(scene);
+    primaryStage.setTitle("Zombie Fighting Game");
+    primaryStage.show();
+
+    // Set the button action
+    buttonFight.setOnAction(event -> fight());
+  }
+
+  // Method to handle the fighting logic
+  private void fight() {
+    // Get the selected weapon from the combobox
+    int selectedWeapon = comboBoxWeapons.getSelectionModel().getSelectedIndex();
+
+    // Generate a random zombie type
+    Random random = new Random();
+    int zombieType = random.nextInt(5) + 1;
+
+    // Check if the selected weapon is effective against the generated zombie
+    switch (zombieType) {
+      case 1:
+        // If the selected weapon is a pistol, shotgun, or minigun, the user kills the zombie
+        if (selectedWeapon == 0 || selectedWeapon == 1 || selectedWeapon == 4) {
+          System.out.println("You killed the Basic Zombie with your weapon!");
+        } else {
+          // If not, the user loses 10 hitpoints
+          System.out.println("Wrong weapon choice! You lost 10 hitpoints.");
+          hitpoints -= 10;
+        }
+        break;
+      case 2:
+        // If the selected weapon is a shotgun, assault rifle, or minigun, the user kills the zombie
+        if (selectedWeapon == 1 || selectedWeapon == 2 || selectedWeapon == 4) {
+          System.out.println("You killed the Armoured Zombie with your weapon!");
+        } else {
+          // If not, the user loses 10 hitpoints
+          System.out.println("Wrong weapon choice! You lost 10 hitpoints.");
+          hitpoints -= 10;
+            // If the selected weapon is a toxic gas, the user kills the zombie
+        if (selectedWeapon == 3) {
+          System.out.println("You killed the Toxic Zombie with your weapon!");
+        } else {
+          // If not, the user loses 10 hitpoints
+          System.out.println("Wrong weapon choice! You lost 10 hitpoints.");
+          hitpoints -= 10;
+        }
+        break;
+      case 4:
+        // If the selected weapon is a minigun, the user kills the zombie
+        if (selectedWeapon == 4) {
+          System.out.println("You killed the Big Zombie with your weapon!");
+        } else {
+          // If not, the user loses 10 hitpoints
+          System.out.println("Wrong weapon choice! You lost 10 hitpoints.");
+          hitpoints -= 10;
+        }
+        break;
+      case 5:
+        // If the selected weapon is an assault rifle, toxic gas, or minigun, the user kills the zombie
+        if (selectedWeapon == 2 || selectedWeapon == 3 || selectedWeapon == 4) {
+          System.out.println("You killed the Fast Zombie with your weapon!");
+        } else {
+          // If not, the user loses 10 hitpoints
+          System.out.println("Wrong weapon choice! You lost 10 hitpoints.");
+          hitpoints -= 10;
+        }
+        break;
+    }
+
+    // Update the label with the new hitpoints value
+    labelHitpoints.setText("Hitpoints: " + hitpoints);
+  }
+
+  // Main method to launch the application
+  public static void main(String[] args) {
+    launch(args);
+  }
+}
+
+
+
+//Explanation:
+
+//The class ZombieApp extends Application to create a JavaFX GUI application.
+//The hitpoints field stores the player's hitpoints, and the labelHitpoints displays the current hitpoints value.
+//The comboBoxWeapons allows the player to select their weapon of choice, and the buttonFight starts the fight.
+//The start method sets up the GUI layout and sets the action for the buttonFight.
+//The fight method handles the fighting logic, where a random zombie is generated, and the selected weapon is checked against the zombie type to determine if the user killed the zombie or lost hitpoints.
+//The main method launches the application.
