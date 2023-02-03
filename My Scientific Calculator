@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class ScientificCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double num1, num2, result; // Variables to store the two numbers and the result
+        char operator; // Variable to store the operator
+
+        System.out.println("Enter two numbers: ");
+        num1 = input.nextDouble(); // Read the first number from the user
+        num2 = input.nextDouble(); // Read the second number from the user
+
+        System.out.println("Enter an operator (+, -, *, /, ^): ");
+        operator = input.next().charAt(0); // Read the operator from the user
+
+        // Use a switch statement to perform the calculation based on the operator
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                result = num1 / num2;
+                break;
+            case '^':
+                result = Math.pow(num1, num2); // Use the Math.pow function for exponentiation
+                break;
+            default:
+                System.out.println("Invalid operator"); // Handle invalid operators
+                return;
+        }
+
+        System.out.println("Result: " + result); // Print the result
+    }
+}
