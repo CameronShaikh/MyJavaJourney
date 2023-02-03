@@ -4,11 +4,13 @@ Java is a high-level programming language developed by Sun Microsystems (now own
 
 Basic skills in Java programming include:
 
+
+
 # Variables and data types: 
 
 In Java, you can declare variables to store values, and you must specify the type of each variable. 
 
-Below is an example of Variables and Data types
+Below is an example of Variables and Data types written in Java
 ------------------------------------------------------------------------------------------------------------------
 
 int age = 30; // declare an integer variable called "age" and initialize it with the value 30
@@ -21,12 +23,14 @@ String name = "John Doe"; // declare a string variable called "name" and initial
 
 Java has several primitive data types, such as int, double, char, and boolean, as well as reference data types, such as String, arrays, and objects.
 
+
+
 # Operators: 
 
 Java has a variety of operators that you can use to perform arithmetic, relational, logical, and conditional operations. 
 For example, the addition operator (+) can be used to add two values, while the less than operator (<) can be used to compare two values and determine if one is less than the other.
 
-Below is an example of Operators
+Below is an example of Operators written in Java
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 int x = 10; // declare an integer variable "x" and set its value to 10
@@ -90,6 +94,8 @@ System.out.println(x); // print the value of "x" (10)
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
 # Control flow statements: 
 
 Control flow statements are used to control the flow of your program, based on certain conditions. 
@@ -97,7 +103,7 @@ For example, you can use an if-else statement to execute different blocks of cod
 Loops, such as for, while, and do-while, allow you to repeat a block of code multiple times. 
 The switch statement is used to execute different blocks of code based on the value of a single expression.
 
-Below is an example of Control flow statements
+Below is an example of Control flow statements  written in Java
 --------------------------------------------------------------------------------------------------
 
 int score = 70; // declare an integer variable called "score" and initialize it with the value 70
@@ -125,13 +131,15 @@ for (int i = 0; i < 5; i++) {
 
 ---------------------------------------------------------------------------------------------------
 
+
+
 # Methods: 
 
 In Java, methods are reusable blocks of code that can be called from other parts of your program. 
 Methods can accept parameters and return values, making them a powerful tool for modularizing your code. 
 For example, you could create a method that calculates the average of a list of numbers, and then call that method from several different parts of your program.
 
-Below is an example of Methods
+Below is an example of Methods written in Java
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // define a method called "max" that takes two integers and returns the maximum of the two
@@ -150,13 +158,15 @@ int maxValue = max(x, y); // call the "max" method and pass "x" and "y" as argum
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
 # Arrays: 
 
 An array is a collection of values of the same type, stored in contiguous memory locations. 
 You can declare an array and initialize it with values, and then access and manipulate its elements using indexing. 
 Java also supports multi-dimensional arrays, which are arrays of arrays.
 
-Below is an example of Arrays
+Below is an example of Arrays written in Java
 -----------------------------------------------------------------------------------------------
 
 int[] numbers = new int[5]; // declare an integer array called "numbers" with 5 elements
@@ -179,6 +189,8 @@ for (int i = 0; i < numbers.length; i++) { // loop through the elements of the a
 
 -----------------------------------------------------------------------------------------------
 
+
+
 # Classes and objects: 
 
 Object-oriented programming (OOP) is a programming paradigm that allows you to model real-world objects and their behavior in your code. 
@@ -187,7 +199,7 @@ An object is an instance of a class, and it has its own state (instance variable
 Inheritance allows you to create a new class that inherits all the properties and behavior of an existing class, while polymorphism allows you to create methods with the same name but different behavior based on the type of object they are called on.
 
 
-Below is an example of Classes and Objects.
+Below is an example of Classes and Objects written in Java
 -----------------------------------------------------------------------------------------------------------------
 
 // define a class called "Person"
@@ -211,6 +223,8 @@ john.greet(); // call the "greet" method of the "john" object
 
 -----------------------------------------------------------------------------------------------------------------
 
+
+
 # Exception handling: 
 
 Exceptions are events that occur during the execution of your program that disrupt its normal flow. 
@@ -219,8 +233,10 @@ Java provides a mechanism for handling exceptions called exception handling.
 You can use try-catch blocks to catch exceptions, and you can also define your own custom exceptions. 
 Exception handling allows you to handle exceptions gracefully, rather than letting your program crash.
 
-Below is an example of Exception handling.
--------------------------------------------------
+Below is an example of Exception handling written in Java
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 Exception handling:
 
@@ -236,6 +252,49 @@ try {
 // Output:
 // Index out of bounds!
 
--------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+# Documentation comments
+
+Java provides a way to include documentation in your code using documentation comments, also known as "doc comments". 
+Doc comments start with /** and end with */ and are used to provide documentation for classes, methods, and variables.
+
+Below is an example of Documentation comments written in Java:
+-------------------------------------------------------------------------
+/**
+ * A simple class that represents a point in 2D space.
+ * 
+ * @author John Doe
+ * @version 1.0
+ */
+public class Point {
+  int x; // the x-coordinate of the point
+  int y; // the y-coordinate of the point
+
+  /**
+   * Creates a new Point object with the specified x and y coordinates.
+   * 
+   * @param x the x-coordinate of the point
+   * @param y the y-coordinate of the point
+   */
+  public Point(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+}
+
+-------------------------------------------------------------------------
+In this example, the first doc comment provides documentation for the Point class. 
+It describes what the class is for and who wrote it, and also provides a version number. The second doc comment provides documentation for the constructor of the Point class. It explains what the constructor does and what the parameters are for.
+
+Doc comments are not executed as part of your program, but they can be processed by tools to generate documentation in a readable format. 
+This makes it easier for others to understand and use your code, especially if it's part of a larger project.
+
+The most common way to process doc comments is to use the javadoc tool that comes with the Java SDK. 
+This tool generates HTML documentation for your code, which you can then distribute or publish online.
+
+
 
 These are the basics of Java programming, and mastering them will give you a strong foundation for building more complex and sophisticated applications
