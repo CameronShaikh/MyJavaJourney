@@ -1,0 +1,45 @@
+A Spring Boot application is a Java-based web application that is built using the Spring framework. 
+It is designed to make it easier to create and deploy web applications by providing a streamlined development experience and a set of pre-configured components and dependencies.
+
+
+Here is an example Java Spring code with comments:
+-----------------------------------------------------------------------
+// Import necessary libraries
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+// Indicate that this is a Spring Boot application
+@SpringBootApplication
+// Define a REST controller for handling HTTP requests
+@RestController
+public class ExampleSpringApp {
+
+    // Define a GET endpoint at the root of the application
+    @GetMapping("/")
+    public String helloWorld() {
+        return "Hello, World!";
+    }
+
+    // Define the main method to run the application
+    public static void main(String[] args) {
+        SpringApplication.run(ExampleSpringApp.class, args);
+    }
+}
+
+----------------------------------------------------------------------
+
+In this example, we have created a simple Spring Boot application with a single endpoint at the root of the application. 
+When a user makes an HTTP GET request to the root endpoint, the application responds with the string "Hello, World!".
+
+Let's go through the code in more detail:
+
+We import the necessary libraries to use Spring Boot.
+We annotate the class with @SpringBootApplication to indicate that this is a Spring Boot application.
+We annotate the class with @RestController to indicate that this class will handle incoming HTTP requests and return responses.
+We define a single endpoint using the @GetMapping annotation, which indicates that this endpoint will handle incoming HTTP GET requests to the root of the application.
+The helloWorld method simply returns a string response.
+We define the main method, which starts the Spring Boot application and runs the ExampleSpringApp class.
+
+This is a very simple example of how to create a Spring Boot application, but it demonstrates the basic structure and components that you'll need in most applications.
