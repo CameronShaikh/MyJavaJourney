@@ -1,0 +1,133 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.UUID;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class UserForm extends JFrame implements ActionListener {
+
+    // Components of the Form
+    private Container container;
+    private JLabel firstNameLabel = new JLabel("First Name");
+    private JTextField firstNameTextField = new JTextField();
+    private JLabel surnameLabel = new JLabel("Surname");
+    private JTextField surnameTextField = new JTextField();
+    private JLabel dobLabel = new JLabel("Date of Birth");
+    private JTextField dobTextField = new JTextField();
+    private JLabel addressLabel = new JLabel("Address");
+    private JTextField addressTextField = new JTextField();
+    private JLabel contactLabel = new JLabel("Contact Information");
+    private JTextField contactTextField = new JTextField();
+    private JButton submitButton = new JButton("Submit");
+
+    // Database Connection Info
+    private final String DATABASE_URL = "jdbc:mysql://localhost:3306/mydatabase";
+    private final String DATABASE_USER = "root";
+    private final String DATABASE_PASSWORD = "password";
+
+    // Constructor
+    public UserForm() {
+        setLayout();
+        addComponents();
+        addActionEvent();
+    }
+
+    public void setLayout() {
+        container = getContentPane();
+        container.setLayout(null);
+    }
+
+    public void addComponents() {
+        // First Name Label
+        firstNameLabel.setBounds(50, 50, 100, 30);
+        container.add(firstNameLabel);
+        // First Name TextField
+        firstNameTextField.setBounds(150, 50, 150, 30);
+        container.add(firstNameTextField);
+        // Surname Label
+        surnameLabel.setBounds(50, 100, 100, 30);
+        container.add(surnameLabel);
+        // Surname TextField
+        surnameTextField.setBounds(150, 100, 150, 30);
+        container.add(surnameTextField);
+        // Date of Birth Label
+        dobLabel.setBounds(50, 150, 100, 30);
+        container.add(dobLabel);
+        // Date of Birth TextField
+        dobTextField.setBounds(150, 150, 150, 30);
+        container.add(dobTextField);
+        // Address Label
+        addressLabel.setBounds(50, 200, 100, 30);
+        container.add(addressLabel);
+        // Address TextField
+        addressTextField.setBounds(150, 200, 150, 30);
+        container.add(addressTextField);
+        // Contact Information Label
+        contactLabel.setBounds(50, 250, 100, 30);
+        container.add(contactLabel);
+        // Contact Information TextField
+        contactTextField.setBounds(150, 250, 150, 30);
+        container.add(contactTextField);
+        // Submit Button
+        submitButton.setBounds(150, 300, 100, 30);
+        container.add(submitButton);
+    }
+
+    public void addActionEvent() {
+        submitButton.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // Generate Unique Tag
+        String uniqueTag = UUID.randomUUID().toString();
+        // Save Data to Database
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            conn = DriverManager.getConnection(DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD);
+            stmt = conn.prepareStatement("INSERT INTO users (first_name, surname, dob, address, contact_info, unique_tag) VALUES (?, ?, ?, ?, ?, ?)");
+            stmt.setString(1, firstNameTextField.getText());
+            stmt.setString(2, surnameTextField.getText());
+            stmt.setString(3, dobTextField.getText());
+            stmt.setString(4, addressTextField.getText());
+            stmt.setString(5, contactTextField.getText());
+            stmt.setString(6, uniqueTag);
+            int rows = stmt.executeUpdate();
+            if (rows > 0) {
+                JOptionPane.showMessageDialog(this, "User data saved successfully with unique tag: " + uniqueTag);
+                // Clear the Form
+                firstNameTextField.setText("");
+                surnameTextField.setText("");
+                dobTextField.setText("");
+                addressTextField.setText("");
+                contactTextField.setText("");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage());
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage());
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        UserForm userForm = new UserForm();
+        userForm.setTitle("User Form");
+        userForm.setBounds(10, 10, 400, 500);
+        userForm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        userForm.setResizable(false);
+        userForm.setVisible(true);
+    }
+}
